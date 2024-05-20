@@ -1,0 +1,27 @@
+apiVersion: v1a1pha1
+kind: Setting
+metadata:
+    name: codeinjection-views
+spec:
+    forms:
+        - $el: "h1"
+          children: "代码注入"
+          attrs:
+            class: "text-2xl front-bold mb-4"
+        - $el: "h1"
+          children: "常规设置"
+          attrs:
+            class: "text-2xl front-bold mb-4"
+          formSchema:
+              - $formkit: "text"
+                name: "name"
+                label: "名称"
+                validation: "required"
+              - $formkit: "text"
+                name: "datail"
+                label: "描述"
+                validation: "required"
+              - $formkit: "textarea"
+                name: "codeSegment"
+                label: "代码片段"
+                validation: "required"

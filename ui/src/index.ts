@@ -13,11 +13,11 @@ export default definePlugin({
         name: "Example",
         component: HomeView,
         meta: {
-          title: "示例页面",
+          title: "Code Injection Tool",
           searchable: true,
           menu: {
-            name: "示例页面",
-            group: "示例分组",
+            name: "Code Injection Tool",
+            group: "工具",
             icon: markRaw(IconPlug),
             priority: 0,
           },

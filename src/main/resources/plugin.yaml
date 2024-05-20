@@ -4,19 +4,19 @@ apiVersion: plugin.halo.run/v1alpha1
 kind: Plugin
 metadata:
   # The name defines how the plugin is invoked, A unique name
-  name: starter
+  name: codeInjectionPro
 spec:
   enabled: true
   requires: ">=2.11.0"
   author:
-    name: Halo
+    name: LeiYe
     website: https://github.com/halo-dev
   logo: logo.png
-  homepage: https://github.com/halo-dev/plugin-starter#readme
-  repo: https://github.com/halo-dev/plugin-starter
-  issues: https://github.com/halo-dev/plugin-starter/issues
-  displayName: "插件快速开始模板"
-  description: "这是一个插件快速开始模板"
+  homepage: https://github.com/alsdhkauuhw/halo-plugin-codeInjectionPro#readme
+  repo: https://github.com/alsdhkauuhw/halo-plugin-codeInjectionPro
+  issues: https://github.com/alsdhkauuhw/halo-plugin-codeInjectionPro/issues
+  displayName: "代码注入增强插件"
+  description: "这个插件致力于完成更加细致、灵活的代码注入管理，它在原有的代码注入功能上进行了增强，用户可以添加管理多个代码片段，并单独控制每个代码片段生效的页面、生效时间等。"
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
+      url: https://github.com/alsdhkauuhw/halo-plugin-codeInjectionPro/blob/main/LICENSE

@@ -6,73 +6,30 @@ import RiCodeBoxLine from "~icons/ri/code-box-line";
 import RiBookReadLine from "~icons/ri/book-read-line";
 import RiComputerLine from "~icons/ri/computer-line";
 import RiArrowRightSLine from "~icons/ri/arrow-right-s-line";
-
-onMounted(() => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6, x: 0.58 },
-  });
-});
+import { FormKitSchema } from '@formkit/vue'
 </script>
 
 <template>
-  <section id="plugin-starter">
-    <div class="wrapper">
-      <span class="title"> 你已经成功运行起了插件！ </span>
-      <span class="message">你可以点击下方文档继续下一步</span>
-      <div class="docs">
-        <a
-          href="https://docs.halo.run/developer-guide/plugin/publish"
-          class="docs__box"
-          target="_blank"
-        >
-          <h2 class="docs__box-title"><RiShareCircleLine />发布一个插件</h2>
-          <span class="docs__box-message">
-            了解如何与我们的社区分享您的扩展。
-          </span>
-          <span class="docs__box-arrow">
-            <RiArrowRightSLine />
-          </span>
-        </a>
-        <a
-          href="https://docs.halo.run/developer-guide/plugin/structure"
-          class="docs__box"
-          target="_blank"
-        >
-          <h2 class="docs__box-title"><RiComputerLine />基础概览</h2>
-          <span class="docs__box-message">
-            了解插件的项目结构、生命周期、资源配置等。
-          </span>
-          <span class="docs__box-arrow">
-            <RiArrowRightSLine />
-          </span>
-        </a>
-        <a
-          href="https://docs.halo.run/developer-guide/plugin/examples/todolist"
-          class="docs__box group"
-          target="_blank"
-        >
-          <h2 class="docs__box-title"><RiBookReadLine />示例插件</h2>
-          <span class="docs__box-message">帮助你从 0 到 1 完成一个插件。</span>
-          <span class="docs__box-arrow">
-            <RiArrowRightSLine />
-          </span>
-        </a>
-        <a
-          href="https://docs.halo.run/developer-guide/plugin/api-reference/extension"
-          class="docs__box"
-          target="_blank"
-        >
-          <h2 class="docs__box-title"><RiCodeBoxLine />API 参考</h2>
-          <span class="docs__box-message">插件中的 API 列表。</span>
-          <span class="docs__box-arrow">
-            <RiArrowRightSLine />
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <VModal
+    :visible="props.open"
+    :layer-closable="false"
+    :title="schema.name"
+    @close="emit('close')"
+  >
+    <FormKit v-model="data" type="form">
+      <FormKitSchema :key="loadKey" :schema="forms" :data="data" />
+    </FormKit>
+    <template #footer>
+      <v-space align="center" direction="row" spacing="xs">
+        <v-button type="primary" @click="generateCode">
+          {{ t("confirm") }}
+        </v-button>
+        <v-button type="default" @click="emit('close')">
+          {{ t("close") }}
+        </v-button>
+      </v-space>
+    </template>
+  </VModal>
 </template>
 
 <style lang="scss" scoped>

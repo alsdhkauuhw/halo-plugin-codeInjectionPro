@@ -1,0 +1,26 @@
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  generateName: annotation-setting-
+spec:
+  targetRef:
+    group: content.halo.run
+    kind: Post
+  formSchema:
+    - $formkit: "text"
+      name: "page"
+      label: "需要注入的页面"
+    - $formkit: "select"
+      name: "location"
+      label: "代码位置"
+      options: 
+        - label: "全局head标签"
+          value: "gobal head"
+        - label: "内容页head标签"
+          value: "part head"
+        - label: "页脚"
+          value: "footer"
+    - $formkit: "checkbox"
+      name: "isEable"
+      label: "是否启用"
+      help: "启用后会向页面注入内容"
