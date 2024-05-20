@@ -23,11 +23,7 @@ Halo 开源建站工具默认提供了全局的代码注入功能，可以在所
 插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/hello-world>
 
 ```bash
-git clone git@github.com:justice2001/vditor-mde.git
-
-# 或者当你 fork 之后
-
-git clone git@github.com:{your_github_id}/vditor-mde.git
+git clone https://github.com/alsdhkauuhw/halo-plugin-codeInjectionPro.git
 ```
 
 ```bash
